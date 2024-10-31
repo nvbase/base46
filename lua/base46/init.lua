@@ -8,13 +8,10 @@ local integrations = {
 
 M.get_theme_tb = function(type)
 	local name = opts.theme
-	local present1, default_theme = pcall(require, "base46.themes." .. name)
-	local present2, user_theme = pcall(require, "themes." .. name)
+	local present, default_theme = pcall(require, "base46.themes." .. name)
 
-	if present1 then
+	if present then
 		return default_theme[type]
-	elseif present2 then
-		return user_theme[type]
 	else
 		error("No such theme!")
 	end
