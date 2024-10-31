@@ -3,8 +3,18 @@ local opts = require("nvconfig").base46
 local cache_path = vim.g.base46_cache
 
 local integrations = {
+	"blankline",
+	"cmp",
 	"defaults",
+	"devicons",
+	"git",
+	"lsp",
+	"mason",
 	"statusline",
+	"syntax",
+	"treesitter",
+	"trouble",
+	"whichkey",
 }
 
 M.get_theme_tb = function(type)
