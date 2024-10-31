@@ -20,6 +20,17 @@ M.get_theme_tb = function(type)
 	end
 end
 
+M.extend_default_hl = function(highlights, integration_name)
+	local polish_hl = M.get_theme_tb("polish_hl")
+
+	-- polish themes
+	if polish_hl and polish_hl[integration_name] then
+		highlights = M.merge_tb(highlights, polish_hl[integration_name])
+	end
+
+	return highlights
+end
+
 M.get_integration = function(name)
 	local highlights = require("base46.integrations." .. name)
 	return M.extend_default_hl(highlights, name)
