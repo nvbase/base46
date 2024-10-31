@@ -112,8 +112,9 @@ M.load_all_highlights = function()
 end
 
 M.override_theme = function(default_theme, theme_name)
-	local changed_themes = {}
-	return M.merge_tb(default_theme, changed_themes.all or {}, changed_themes[theme_name] or {})
+--	local changed_themes = {}
+--	return M.merge_tb(default_theme, changed_themes.all or {}, changed_themes[theme_name] or {})
+	return default_theme
 end
 
 return M
