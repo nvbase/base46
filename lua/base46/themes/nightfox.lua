@@ -55,17 +55,10 @@ M.base_16 = {
 	base0F = "#c0c8d5",
 }
 
-M.polish_hl = {
-	treesitter = {
-		["@variable.member.key"] = { fg = M.base_16.base05 },
-		["@operator"] = { fg = M.base_30.dark_purple },
-		["@keyword"] = { fg = M.base_30.teal },
-		["@variable.parameter"] = { fg = M.base_30.teal },
-	},
-}
+
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "nightfox")
+--M = require("base46").override_theme(M, "nightfox")
 
 return M
