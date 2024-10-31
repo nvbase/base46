@@ -3,7 +3,6 @@ local opts = require("nvconfig").base46
 local cache_path = vim.g.base46_cache
 
 local integrations = {
-	"blankline",
 	"cmp",
 	"defaults",
 	"devicons",
