@@ -4,6 +4,7 @@ local cache_path = vim.g.base46_cache
 
 local integrations = {
 	"defaults",
+	"statusline",
 }
 
 M.get_theme_tb = function(type)
