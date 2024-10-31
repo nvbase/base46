@@ -18,10 +18,13 @@ local integrations = {
 
 M.get_theme_tb = function(type)
 	local name = opts.theme
-	local present, default_theme = pcall(require, "base46.themes." .. name)
+	local present1, default_theme = pcall(require, "base46.themes." .. name)
+	local present2, user_theme = pcall(require, "themes." .. name)
 
-	if present then
+	if present1 then
 		return default_theme[type]
+	elseif present2 then
+		return user_theme[type]
 	else
 		error("No such theme!")
 	end
@@ -109,11 +112,6 @@ M.load_all_highlights = function()
 	pcall(function()
 		require("ibl").update()
 	end)
-end
-
-M.override_theme = function(default_theme, theme_name)
-	local changed_themes = opts.changed_themes
-	return M.merge_tb(default_theme, changed_themes.all or {}, changed_themes[theme_name] or {})
 end
 
 return M
